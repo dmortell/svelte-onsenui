@@ -1,5 +1,7 @@
 <script>
 import { noop } from "svelte/internal";
+import {getEventsAction} from './Utils.js';
+const events = getEventsAction();
 
 
 // import React from 'react';
@@ -213,7 +215,7 @@ const attrs = {}		// todo capture other props
 
 </script>
 
-<ons-page {...attrs} >
+<ons-page {...attrs} use:events>
 	<slot name='toolbar' />
 	<div class='page__background'> </div>
 	<div class='page__content' style={contentStyle}>
@@ -225,17 +227,3 @@ const attrs = {}		// todo capture other props
 	<slot name='fixed'/>
 	<slot name='bottomToolbar' />
 </ons-page>
-
-<!--
-<ons-page {...attrs} >
-	{toolbar}
-	<div class='page__background'> </div>
-	<div class='page__content' style={contentStyle}>
-		<slot/>
-	</div>
-	<div class='page__extra' style={{zIndex: 10001}}>
-		{modal}
-	</div>
-	{fixed}
-	{bottomToolbar}
-</ons-page> -->

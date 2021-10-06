@@ -1,4 +1,7 @@
 <script>
+	import {getEventsAction} from './Utils.js';
+	const events = getEventsAction();
+
 /**
  * @original ons-icon
  * @category visual
@@ -85,17 +88,23 @@
 		icon = icon.default + ', ' + innerString.join(',');
 	}
 
-	if (size) {
-		console.log(typeof size)
-		if ((typeof size) === 'number') {
-			size = `${size}px`;
-		} else {
-			const keys = Object.keys(size).filter((a) => a !== 'default');
-			const innerString = keys.map((key) => key + ':' + size[key] + 'px');
-			size = size.default + 'px, ' + innerString.join(',');
+	let _size
+	$: {
+		if (size) {
+			console.log(typeof size)
+			if ((typeof size) === 'number') {
+				_size = `${size}px`;
+			} else {
+				const keys = Object.keys(size).filter((a) => a !== 'default');
+				const innerString = keys.map((key) => key + ':' + size[key] + 'px');
+				_size = size.default + 'px, ' + innerString.join(',');
+			}
 		}
 	}
 
+
 </script>
 
-<ons-icon {size} {icon}><slot/></ons-icon>
+<ons-icon size={_size} {icon} {...$$restProps} use:events>
+	<slot/>
+</ons-icon>
