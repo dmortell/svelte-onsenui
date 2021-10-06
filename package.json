@@ -1,0 +1,28 @@
+{
+  "name": "svelte-onsenui",
+  "version": "0.0.1",
+  "description": "Onsen UI - Svelte Components for Hybrid Cordova/PhoneGap Apps with Material Design and iOS UI components",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3100",
+    "build": "vite build",
+    "serve": "vite preview",
+    "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/svelte": "^3.0.3",
+    "babel-jest": "^27.2.4",
+    "jest": "^27.2.4",
+    "svelte": "^3.37.0",
+    "svelte-jester": "^2.1.5",
+    "vite": "^2.6.0"
+  },
+  "dependencies": {
+    "onsenui": "^2.11.2"
+  }
+}
