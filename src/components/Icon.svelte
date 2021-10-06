@@ -21,9 +21,6 @@
   />
 */
 
-	// import SimpleWrapper from './SimpleWrapper.jsx';
-	// import Util from './Util.js';
-
 	/**
    * @name modifier
    * @type string
@@ -32,7 +29,7 @@
    *  [en]The appearance of the icon.[/en]
    *  [ja][/ja]
    */
-  export var modifier = ''		// PropTypes.string,
+  // export var modifier = ''		// PropTypes.string,
 
   /**
    * @name icon
@@ -59,7 +56,7 @@
    *  [en] Number of degrees to rotate the icon. Valid values are 90, 180 and 270. [/en]
    *  [ja][/ja]
    */
-	export var rotate = 0;		// PropTypes.oneOf([0, 90, 180, 270]),
+	// export var rotate = 0;		// PropTypes.oneOf([0, 90, 180, 270]),
 
   /**
    * @name fixedWidth
@@ -68,7 +65,7 @@
    * [en] When used in a list, you want the icons to have the same width so that they align vertically by defining this attribute. [/en]
    *  [ja][/ja]
    */
-	 export var fixedWidth = false;		// PropTypes.bool,
+	//  export var fixedWidth = false;		// PropTypes.bool,
 
   /**
    * @name spin
@@ -77,34 +74,29 @@
    * [en] Specify whether the icon should be spinning. [/en]
    *  [ja][/ja]
    */
-  export var spin = false;		// PropTypes.bool
 
-	// const attrs = Util.getAttrs(this, others);
-	const attrs = {modifier, rotate, fixedWidth, spin};
+	$: _size = getSize(size)
+	$: _icon = getIcon(icon)
 
-	if (icon && (typeof icon) !== 'string') {
-		const keys = Object.keys(icon).filter((a) => a !== 'default');
-		const innerString = keys.map((key) => key + ':' + icon[key] + '');
-		icon = icon.default + ', ' + innerString.join(',');
-	}
-
-	let _size
-	$: {
-		if (size) {
-			console.log(typeof size)
-			if ((typeof size) === 'number') {
-				_size = `${size}px`;
-			} else {
-				const keys = Object.keys(size).filter((a) => a !== 'default');
-				const innerString = keys.map((key) => key + ':' + size[key] + 'px');
-				_size = size.default + 'px, ' + innerString.join(',');
-			}
+	function getIcon(icon){
+		if (icon && (typeof icon) !== 'string') {
+			const keys = Object.keys(icon).filter((a) => a !== 'default');
+			const innerString = keys.map((key) => key + ':' + icon[key] + '');
+			return icon.default + ', ' + innerString.join(',');
 		}
+		return icon
 	}
-
-
+	function getSize(size){
+		if (size) {
+			if ((typeof size) === 'string') return `${size}px`;
+			const keys = Object.keys(size).filter((a) => a !== 'default');
+			const innerString = keys.map((key) => key + ':' + size[key] + 'px');
+			return size.default + 'px, ' + innerString.join(',');
+		}
+		return size
+	}
 </script>
 
-<ons-icon size={_size} {icon} {...$$restProps} use:events>
+<ons-icon size={_size} icon={_icon} {...$$restProps} use:events>
 	<slot/>
 </ons-icon>

@@ -54,7 +54,9 @@ ReactDOM.render(<MyPage />, document.getElementById('app'));
 
 Take a look at the kitchensink example for more complex code.
 
+## Bugs
 
+The title attribute on ActionSheet causes a title to be displayed wherever the mouse is.
 
 
 **Make beautiful high performance hybrid mobile apps using HTML5, CSS and JavaScript. Includes Material Design for Android and flat design for iOS.**

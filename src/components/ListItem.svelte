@@ -1,7 +1,4 @@
 <script>
-// import ReactDOM from 'react-dom';
-// import PropTypes from 'prop-types';
-// import SimpleWrapper from './SimpleWrapper.jsx';
 import {getEventsAction} from './Utils.js';
 const events = getEventsAction();
 
@@ -81,35 +78,19 @@ const events = getEventsAction();
    *  [en]For expandable list items, specifies whether item is expanded[/en]
    *  [ja][/ja]
    */
-	 export var expanded; 	// PropTypes.bool
+	 export var expanded = false; 	// PropTypes.bool
 	 import {onMount} from 'svelte'
-	 //  onMount(() => {})
 
 	 let node
-	 $: {
-		 if (node){
-			 expanded ? node.showExpansion() : node.hideExpansion()
-		 }
+	 $: doExpand(expanded)
+
+	 onMount(()=>{ doExpand(expanded) })
+
+	 function doExpand(expanded){
+		if (node && expanded !== node.expanded)
+			 	expanded ? node.showExpansion() : node.hideExpansion()
 	 }
-
-
-
-  // componentDidMount() {
-  //   this.node = ReactDOM.findDOMNode(this);
-  //   this.node.expanded = this.props.expanded === true;
-  //   if (this.node.expanded) {
-  //     this.node.classList.add('expanded');
-  //   }
-  // }
-
-  // componentDidUpdate() {
-  //   if (this.props.expanded !== this.node.expanded) {
-  //     const action = this.props.expanded ? 'show' : 'hide';
-  //     this.node[action + 'Expansion']();
-				// showExpansion()
-  //   }
-  // }
-
+	 // todo add more slots in listItem
 </script>
 
 <ons-list-item bind:this={node} class:expanded {expanded} {...$$restProps} use:events>
@@ -125,7 +106,6 @@ const events = getEventsAction();
 		<slot name="left"></slot>
 	</div>
 {/if} -->
-
 
 <!-- <div class="list-item {$$props.class ??''}" class:narrow class:link on:click >
 	{#if title}<div class="left"><slot name="title">{title}</slot></div>{/if}

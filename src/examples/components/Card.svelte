@@ -13,8 +13,9 @@ import MyToolbar from './MyToolbar.svelte';
 			<div class="title">Awesome framework</div>
 			<div class="content">
 				<div>
-					<Button><Icon icon="ion-ios-thumbs-up"></Icon></Button>
-					<Button><Icon icon="ion-ios-share"></Icon></Button>
+					<!-- <Button><Icon icon="ion-ios-thumbs-up"></Icon></Button> -->
+					<Button><Icon icon="thumbs-up"></Icon></Button>
+					<Button><Icon icon="share"></Icon></Button>
 				</div>
 				<List>
 					<ListHeader>Bindings</ListHeader>
