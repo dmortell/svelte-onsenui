@@ -1,10 +1,10 @@
 export { default as ActionSheets } from './ActionSheets.svelte';
+export { default as AlertDialogs } from './AlertDialogs.svelte';
 export { default as Card } from './Card.svelte';
 // export { default as Page } from './Page.svelte';
 // export { default as List } from './List.svelte';
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';
-// export { default as AlertDialog } from './AlertDialog.svelte';
 // export { default as Toast } from './Toast.svelte';
 // export { default as Splitter } from './Splitter.svelte';
 // export { default as Input } from './Input.svelte';

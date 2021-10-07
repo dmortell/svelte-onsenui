@@ -3,13 +3,6 @@ import { noop } from "svelte/internal";
 import {getEventsAction} from './Utils.js';
 const events = getEventsAction();
 
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import ReactDOM from 'react-dom';
-// import BasicComponent from './BasicComponent.jsx';
-// import Util from './Util.js';
-
 /**
  * @original ons-page
  * @category page
@@ -51,7 +44,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let modifier = '';			// PropTypes.string,
+//  export let modifier = '';			// PropTypes.string,
 
 /**
  * @name renderModal
@@ -61,7 +54,7 @@ export var contentStyle = {};		// PropTypes.object,
  * @description
  *  [en] This function renders a modal that masks current screen.[/en]
  */
- export let renderModal = noop;		// PropTypes.func,
+//  export let renderModal = noop;		// PropTypes.func,
 
 /**
  * @name renderToolbar
@@ -72,7 +65,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [en] This function renders the toolbar of the page.[/en]
  *  [ja][/ja]
  */
- export let renderToolbar = noop;		// PropTypes.func,
+//  export let renderToolbar = noop;		// PropTypes.func,
 
 /**
  * @name renderBottomToolbar
@@ -82,7 +75,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [en] This function renders the bottom toolbar of the page.[/en]
  *  [ja][/ja]
  */
- export let renderBottomToolbar = noop;	// PropTypes.func,
+//  export let renderBottomToolbar = noop;	// PropTypes.func,
 
 /**
  * @name renderFixed
@@ -92,7 +85,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [en] This function renders fixed content of the page. Can be used to render `Fab` or `SpeedDial` components as well as other components that don't scroll with the page.[/en]
  *  [ja][/ja]
  */
- export let renderFixed = noop;				// PropTypes.func,
+//  export let renderFixed = noop;				// PropTypes.func,
 
 /**
  * @name onInit
@@ -104,7 +97,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let onInit = () => {}							// PropTypes.func,
+//  export let onInit = () => {}							// PropTypes.func,
 
 /**
  * @name onShow
@@ -116,7 +109,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let onShow = () => {}							// PropTypes.func,
+//  export let onShow = () => {}							// PropTypes.func,
 
 /**
  * @name onHide
@@ -128,7 +121,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let onHide = () => {}							// PropTypes.func,
+//  export let onHide = () => {}							// PropTypes.func,
 
 /**
  * @name onInfiniteScroll
@@ -140,7 +133,7 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let onInfiniteScroll = () => {}		// PropTypes.func,
+//  export let onInfiniteScroll = () => {}		// PropTypes.func,
 
 /**
  * @name onDeviceBackButton
@@ -152,11 +145,11 @@ export var contentStyle = {};		// PropTypes.object,
  *  [/en]
  *  [ja][/ja]
  */
- export let onDeviceBackButton = () => {}	// PropTypes.func
+//  export let onDeviceBackButton = () => {}	// PropTypes.func
 
 // const {contentStyle, ...other} = this.props;
 // const attrs = Util.getAttrs(this, other);
-
+// todo convert style objects to string
 
 
 // class Page extends BasicComponent {
@@ -211,11 +204,9 @@ export var contentStyle = {};		// PropTypes.object,
 // const modal = this.props.renderModal(this);
 // const fixed = this.props.renderFixed(this);
 
-const attrs = {}		// todo capture other props
-
 </script>
 
-<ons-page {...attrs} use:events>
+<ons-page {...$$restProps} use:events>
 	<slot name='toolbar' />
 	<div class='page__background'> </div>
 	<div class='page__content' style={contentStyle}>

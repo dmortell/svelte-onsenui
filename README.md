@@ -1,6 +1,6 @@
-[![npm version](https://badge.fury.io/js/react-onsenui.svg)](https://badge.fury.io/js/react-onsenui)
+[![npm version](https://badge.fury.io/js/svelte-onsenui.svg)](https://badge.fury.io/js/svelte-onsenui)
 
-# Onsen UI - React Components for Cordova/PhoneGap hybrid apps
+# Onsen UI - Svelte Components for Cordova/PhoneGap hybrid apps
 
 **Make beautiful high performance hybrid mobile apps using HTML5, CSS and JavaScript. Includes Material Design for Android and flat design for iOS.**
 
@@ -8,68 +8,71 @@
 
 It can be used to build hybrid apps with [Cordova](https://cordova.apache.org/) and [PhoneGap](http://phonegap.com/) but can also run in the browser.
 
-We have built a [Tutorial Website](https://onsen.io/playground/?framework=react&category=Getting%20started&module=Using%20the%20components) where you can see live examples of OnsenUI without installing it. If you find any issues, feel free to report at [our OpenSource Repository](https://github.com/OnsenUI/tutorial). Also pull requests are welcome.
+We also have a highly engaged [community](https://community.onsen.io/) that will be available to answer your questions. Visit our Discord [channel](https://discord.com/channels/415288814475542540/415288814911619084).
 
-To learn how to use these components, please refer to [the documentation](https://onsen.io/v2/docs/guide/react/index.html). You can also check out our [kitchensink example](https://github.com/OnsenUI/react-onsenui-kitchensink) to learn how to use this or you can [click here](http://onsenui.github.io/react-onsenui-kitchensink/demo.html) for a quick demo.
+## Work in progress
 
-We also have a highly engaged [community](https://community.onsen.io/) that will be available to answer your questions.
+Note that the Svelte component package is still a work in progress and not all components are yet available or documented. See the Contribution section below if you would like to help work on completing the Svelte components.
 
-The main [Onsen UI repo](https://github.com/OnsenUI/OnsenUI) contains the CSS and core JS library for these components. Please star it if you like it!
+## Using Onsen UI with Svelte
 
-## Using Onsen UI with npm
+The easiest way to use these components is by installing them through npm and using Vite.
 
-The easiest way to use these components is by installing them through npm and using a CommonJS module system such as browserify and webpack (the kitchensink example above is using browserify).
+### Installation for development
 
-You need to install `react`, `react-dom`, `onsenui` and `react-onsenui`. You probably also need to add [Babel](https://babeljs.io/) with the `react` preset.
+Copy `font_awesome`, `ionicons` and `material-design-iconic-font` folders into `public/css`.
+
+Recommended to use pnpm instead of npm to save your disk space with duplicate node_modules from multiple projects.
+
+```
+pnpm install
+npm run dev
+```
+
+You need to install `svelte`, `onsenui` and `svelte-onsenui`.
 
 Now you can import the necessary libraries in your code:
 
 ```jsx
-var React = require('react');
-var ReactDOM = require('react-dom');
+// main.js
+import 'onsenui/css/onsenui.css';
+import 'onsenui/css/onsen-css-components.css';
+import App from './src/App.svelte';
+// require('onsenui'); // This needs to be imported to bootstrap the components.
+// var Ons = require('svelte-onsenui');
 
-require('onsenui'); // This needs to be imported to bootstrap the components.
-var Ons = require('react-onsenui');
-
-var MyPage = React.createClass({
-  renderToolbar: function() {
-    return (
-      <Ons.Toolbar>
-        <div className='center'>Onsen UI</div>
-      </Ons.Toolbar>
-    );
-  }
-
-  render: function() {
-    return (
-      <Ons.Page renderToolbar={this.renderToolbar}>
-        <p>This is Onsen UI!</p>
-      </Ons.Page>
-    );
-  }
+const app = new App({
+  target: document.getElementById('app')
 });
 
-ReactDOM.render(<MyPage />, document.getElementById('app'));
+export default app;
+```
+---
+```jsx
+// src/App.svelte
+<script>
+	import ons from 'onsenui';
+	import { Page, Button, Toolbar } from 'svelte-onsenui';
+</script>
+
+<Page renderToolbar={this.renderToolbar}>
+	<Toolbar slot='toolbar'>
+		<div className='center'>Onsen UI</div>
+	</Toolbar>
+	<p>This is Onsen UI!</p>
+	<Button id="push-button" on:click={()=>{
+		ons.notification.toast('Hello world!', { timeout: 2000 });
+	}}>Push</Button>
+</Page>
 ```
 
-Take a look at the kitchensink example for more complex code.
+Take a look at the Svelte examples for more complex code.
 
 ## Bugs
 
 The title attribute on ActionSheet causes a title to be displayed wherever the mouse is.
 
-
-**Make beautiful high performance hybrid mobile apps using HTML5, CSS and JavaScript. Includes Material Design for Android and flat design for iOS.**
-
-[Onsen UI](https://onsen.io/2/) is a UI component library for hybrid mobile apps. It provides components for navigation, forms, tabs, Material Design, infinite lists and much more.
-
-It can be used to build hybrid apps with [Cordova](https://cordova.apache.org/) and [PhoneGap](http://phonegap.com/) but can also run in the browser.
-
-To learn how to use these components, please refer to [the documentation](https://onsen.io/v2/docs/guide/react/index.html). You can also check out our [kitchensink example](https://github.com/OnsenUI/react-onsenui-kitchensink) to learn how to use this or you can [click here](http://onsenui.github.io/react-onsenui-kitchensink/demo.html) for a quick demo.
-
-The main [Onsen UI repo](https://github.com/OnsenUI/OnsenUI) contains the CSS and core JS library for these components. Please star it if you like it!
-
-# Contribution
+# Contributing
 
 We always welcome contributions by either opening an issue or doing a pull request.
 
@@ -88,4 +91,4 @@ $ pnpm install @babel/core @babel/preset-env jest babel-jest svelte-jester -D 		
 $ pnpm install -D @testing-library/jest-dom @testing-library/svelte
 ```
 
-After these changes one can run our demo examples with `npm run dev` and open a brower at port 9000.
+After these changes one can run our demo examples with `npm run dev` and open a brower at port 3100.

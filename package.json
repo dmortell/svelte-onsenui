@@ -1,7 +1,7 @@
 {
   "name": "svelte-onsenui",
-  "version": "0.0.1",
-  "description": "Onsen UI - Svelte Components for Hybrid Cordova/PhoneGap Apps with Material Design and iOS UI components",
+  "version": "0.1.0",
+  "description": "Onsen UI - Svelte Components",
   "type": "module",
   "scripts": {
     "dev": "vite --port 3100",

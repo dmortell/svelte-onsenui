@@ -15,12 +15,8 @@ let isOpen = false
 
 <Page>
 <Toolbar slot='toolbar'>
-	<div class="left">
-		<BackButton>Back</BackButton>
-	</div>
-	<div class="center">
-		Action sheet
-	</div>
+	<div class="left"><BackButton>Back</BackButton></div>
+	<div class="center">Action sheet</div>
 </Toolbar>
 
 <!-- <p style={{textAlign: 'center', paddingTop: '10px'}}> -->
@@ -41,6 +37,7 @@ let isOpen = false
 >
 	<ActionSheetButton on:click={handleCancel}>Label1</ActionSheetButton>
 	<ActionSheetButton on:click={handleCancel}>Label2</ActionSheetButton>
+	<ActionSheetButton on:click={handleCancel}><a href='#!'>Link</a></ActionSheetButton>
 	<ActionSheetButton on:click={handleCancel} modifier={'destructive'}>Label3</ActionSheetButton>
 	<ActionSheetButton on:click={handleCancel} icon={'md-close'}>Cancel</ActionSheetButton>
 </ActionSheet>

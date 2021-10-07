@@ -11,6 +11,8 @@ export { default as ListHeader } from './ListHeader.svelte';
 export { default as Navigator } from './Navigator.svelte';
 export { default as Page } from './Page.svelte';
 export { default as Toolbar } from './Toolbar.svelte';
+export { default as AlertDialog } from './AlertDialog.svelte';
+export { default as AlertDialogButton } from './AlertDialogButton.svelte';
 
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';

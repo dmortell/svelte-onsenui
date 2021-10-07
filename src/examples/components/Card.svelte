@@ -22,6 +22,7 @@ import MyToolbar from './MyToolbar.svelte';
 					<ListItem>Vue</ListItem>
 					<ListItem>Angular</ListItem>
 					<ListItem>React</ListItem>
+					<ListItem>Svelte</ListItem>
 				</List>
 			</div>
 		</Card>

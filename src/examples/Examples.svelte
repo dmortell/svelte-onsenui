@@ -22,7 +22,7 @@
 <Page style={{background: 'green'}}>
 	<Toolbar slot=toolbar> <div class='center'> Up Toolbar </div> </Toolbar>
 	<List modifier='inset'>
-		<ListItem slot='header' lockOnDrag style='background: lightblue' tappable tap-background-color='cyan'> HEADER </ListItem>
+		<ListItem slot='header' lockOnDrag style='background: #cddfe4' tappable tap-background-color='lightblue'> HEADER </ListItem>
 		{#each examples as example}
 			<ListItem on:click={goto.bind(this, example)}>{example.title}</ListItem>
 		{/each}
