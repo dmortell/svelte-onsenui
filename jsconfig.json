@@ -13,7 +13,6 @@
     "baseUrl": ".",
     "checkJs": false,
 		"paths": {
-			"$lib/*":	["src/components/*"],
 			"$svelte-onsenui/*":	["src/components/*"]
 		}
   },

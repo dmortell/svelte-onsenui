@@ -1,6 +1,8 @@
+// Add examples here
 export { default as ActionSheets } from './ActionSheets.svelte';
 export { default as AlertDialogs } from './AlertDialogs.svelte';
 export { default as Card } from './Card.svelte';
+export { default as Icons } from './Icons.svelte';
 // export { default as Page } from './Page.svelte';
 // export { default as List } from './List.svelte';
 // export { default as LazyList } from './LazyList.svelte';
@@ -8,7 +10,6 @@ export { default as Card } from './Card.svelte';
 // export { default as Toast } from './Toast.svelte';
 // export { default as Splitter } from './Splitter.svelte';
 // export { default as Input } from './Input.svelte';
-export { default as Icons } from './Icons.svelte';
 // export { default as Ripple } from './Ripple.svelte';
 // export { default as SpeedDial } from './SpeedDial.svelte';
 // export { default as PullHook } from './PullHook.svelte';

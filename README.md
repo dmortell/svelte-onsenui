@@ -79,16 +79,8 @@ We always welcome contributions by either opening an issue or doing a pull reque
 To test this repo in the current state of master, one needs to first clone this repo recursively (it binds onsenui in a specific version) and run `npm install` in both the main folder and OnsenUI folder and finally build OnsenUI.
 
 ```bash
-$ git clone --recursive git@github.com:OnsenUI/react-onsenui.git
+$ git clone https://github.com/dmortell/svelte-onsenui.git
 $ npm install
-$ cd OnsenUI; npm install
-$ npm install -g gulp # install gulp if not already installed
-$ gulp build
-
-$ cd .\OnsenUI\bindings\svelte
-$ pnpm i -D svelte svelte-preprocess svelte-css-vars @sveltejs/vite-plugin-svelte vite path
-$ pnpm install @babel/core @babel/preset-env jest babel-jest svelte-jester -D 			# for tests
-$ pnpm install -D @testing-library/jest-dom @testing-library/svelte
 ```
 
 After these changes one can run our demo examples with `npm run dev` and open a brower at port 3100.

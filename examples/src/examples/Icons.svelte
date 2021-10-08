@@ -27,7 +27,7 @@
 </script>
 
 <Page {modifier}  >
-	<MyToolbar slot='toolbar' {modifier} title='Icon' />
+	<MyToolbar slot='toolbar' {modifier} title='Icon Examples' />
 	<!-- <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}> -->
 	<div style="display:flex; flex-direction:column; align-items:center; justify-content: center;">
 		<p> </p>
