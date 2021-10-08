@@ -5,6 +5,7 @@ export { default as Card } from './Card.svelte';
 export { default as Icons } from './Icons.svelte';
 export { default as Toolbars } from './Toolbars.svelte';
 export { default as Lists } from './Lists.svelte';
+export { default as Splitters } from './Splitters.svelte';
 // export { default as Page } from './Page.svelte';
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';

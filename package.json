@@ -1,7 +1,7 @@
 {
   "name": "svelte-onsenui",
   "version": "0.1.4",
-  "description": "Svelte bindings for Onsen UI",
+  "description": "Svelte component bindings for Onsen UI",
 	"author": "David Mortell <dmortell@yahoo.com>",
 	"license": "MIT",
   "homepage": "https://github.com/dmortell/svelte-onsenui",
@@ -11,17 +11,13 @@
   },
 	"keywords": [
 		"svelte",
-		"cordova",
-		"hybrid",
 		"mobile",
 		"onsenui",
-		"phonegap",
-		"plugin",
 		"ui"
 	],
 	"todo": {
 		"version": "npm version patch",
-		"publish": "npm publish --access public --tag alpha",
+		"publish": "npm publish --access public --tag latest",
 
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",

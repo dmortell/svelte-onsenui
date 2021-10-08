@@ -16,12 +16,14 @@ export { default as Navigator } from './Navigator.svelte';
 export { default as Page } from './Page.svelte';
 export { default as Toolbar } from './Toolbar.svelte';
 export { default as ToolbarButton } from './ToolbarButton.svelte';
+export { default as Splitter } from './Splitter.svelte';
+export { default as SplitterSide } from './SplitterSide.svelte';
+export { default as SplitterContent } from './SplitterContent.svelte';
 
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';
 // export { default as AlertDialog } from './AlertDialog.svelte';
 // export { default as Toast } from './Toast.svelte';
-// export { default as Splitter } from './Splitter.svelte';
 // export { default as Input } from './Input.svelte';
 // export { default as Ripple } from './Ripple.svelte';
 // export { default as SpeedDial } from './SpeedDial.svelte';

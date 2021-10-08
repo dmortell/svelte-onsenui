@@ -7,7 +7,7 @@
 </script>
 
 <Page {modifier}>
-	<Toolbar slot='toolbar' modifier={modifier} >
+	<Toolbar slot='toolbar' {modifier} >
 		<div class="left"><BackButton {modifier}>Back</BackButton></div>
 		<div class="center">Toolbar Example</div>
 		<div class="right"><ToolbarButton {modifier}>Settings</ToolbarButton></div>
