@@ -22,7 +22,7 @@
 	<List modifier='inset'>
 		<ListItem slot='header' lockOnDrag style='background: #cddfe4' tappable tap-background-color='lightblue'> HEADER </ListItem>
 		{#each examples as example}
-			<ListItem on:click={goto.bind(this, example)}>{example.title}</ListItem>
+			<ListItem on:click={()=>goto(example)}>{example.title}</ListItem>
 		{/each}
 	</List>
 </Page>

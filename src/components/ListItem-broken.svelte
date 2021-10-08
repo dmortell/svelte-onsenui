@@ -87,7 +87,11 @@ const events = getEventsAction();
 	 onMount(()=>{ doExpand(expanded) })
 
 	 function doExpand(expanded){
-		if (node && expanded !== node.expanded) expanded ? node.showExpansion() : node.hideExpansion()
+			 try {
+				if (node && expanded !== node.expanded) expanded ? node.showExpansion() : node.hideExpansion()
+			 } catch (err){
+				 console.log("Error", err, node)
+			 }
 	 }
 	 // todo add more slots in listItem
 

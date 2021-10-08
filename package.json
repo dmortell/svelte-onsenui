@@ -22,6 +22,7 @@
 	"todo": {
 		"version": "npm version patch",
 		"publish": "npm publish --access public --tag alpha",
+
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
@@ -34,7 +35,8 @@
 		"jest": "^27.2.4"
 	},
   "scripts": {
-    "dev": " cd examples && vite --port 3100",
+    "dev": "echo Please change to the examples directory to run the dev server",
+    "dev2":  "cd examples && vite --port 3100",
     "build": "cd examples && vite build",
     "serve": "cd examples && vite preview",
     "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js",

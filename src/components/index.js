@@ -11,6 +11,7 @@ export { default as Icon } from './Icon.svelte';
 export { default as List } from './List.svelte';
 export { default as ListItem } from './ListItem.svelte';
 export { default as ListHeader } from './ListHeader.svelte';
+export { default as ListTitle } from './ListTitle.svelte';
 export { default as Navigator } from './Navigator.svelte';
 export { default as Page } from './Page.svelte';
 export { default as Toolbar } from './Toolbar.svelte';

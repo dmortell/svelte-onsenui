@@ -19,22 +19,22 @@
 			{:else}
 			<p>default/ios mode</p>
 		{/if}
-		<p>
+		<div>
 			<Button {modifier} on:click={toggleModifier}>Switch modifier</Button>
 			<br />
 			<br />
 			<br />
 			<br />
 			<br />
-			Use &lt;ToolbarButton&gt; in toolbars instead of &lt;Button&gt;
-		</p>
+			Use <pre>&lt;ToolbarButton&gt;</pre> in toolbars instead of <pre>&lt;Button&gt;</pre>
+		</div>
 	</div>
 	<BottomToolbar style='display:flex; justify-content: space-around; flex-wrap: nowrap; line-height:44px;'>
 		<div class='left'>
 			<ToolbarButton {modifier}>ToolbarButton</ToolbarButton>
 		</div>
 		<div class='center'>
-			Bottom Toolbar content..
+			Bottom Toolbar content
 		</div>
 		<div class='right'>
 			<Button {modifier}>Normal Button</Button>
