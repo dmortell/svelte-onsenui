@@ -7,7 +7,7 @@ import MyToolbar from './MyToolbar.svelte';
 
 <Page>
 	<MyToolbar slot='toolbar' title='Card' />
-	<div style='margin: 50'>
+	<div style='margin: 50px'>
 		<Card>
 			<img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style='width: 100%' />
 			<div class="title">Awesome framework</div>

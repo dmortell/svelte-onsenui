@@ -1,6 +1,9 @@
 export { default as ActionSheet } from './ActionSheet.svelte';
 export { default as ActionSheetButton } from './ActionSheetButton.svelte';
+export { default as AlertDialog } from './AlertDialog.svelte';
+export { default as AlertDialogButton } from './AlertDialogButton.svelte';
 export { default as BackButton } from './BackButton.svelte';
+export { default as BottomToolbar } from './BottomToolbar.svelte';
 export { default as Button } from './Button.svelte';
 export { default as Card } from './Card.svelte';
 export { default as Fab } from './Fab.svelte';
@@ -11,8 +14,7 @@ export { default as ListHeader } from './ListHeader.svelte';
 export { default as Navigator } from './Navigator.svelte';
 export { default as Page } from './Page.svelte';
 export { default as Toolbar } from './Toolbar.svelte';
-export { default as AlertDialog } from './AlertDialog.svelte';
-export { default as AlertDialogButton } from './AlertDialogButton.svelte';
+export { default as ToolbarButton } from './ToolbarButton.svelte';
 
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';
@@ -33,7 +35,6 @@ export { default as AlertDialogButton } from './AlertDialogButton.svelte';
 // export { default as Segment } from './Segment.svelte';
 // export { default as Select } from './Select.svelte';
 // export { default as RowColumn } from './RowColumn.svelte';
-// export { default as BottomToolbar } from './BottomToolbar.svelte';
 // export { default as RouterNavigator } from './RouterNavigator.svelte';
 // export { default as ReduxNavigator } from './ReduxNavigator.svelte';
 // export { default as GestureDetector } from './GestureDetector.svelte';
