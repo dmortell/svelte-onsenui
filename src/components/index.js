@@ -20,6 +20,11 @@ export { default as Splitter } from './Splitter.svelte';
 export { default as SplitterSide } from './SplitterSide.svelte';
 export { default as SplitterContent } from './SplitterContent.svelte';
 
+export { default as Input } from './Input.svelte';
+export { default as Checkbox } from './Checkbox.svelte';
+export { default as Radio } from './Radio.svelte';
+export { default as SearchInput } from './SearchInput.svelte';
+
 // export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';
 // export { default as AlertDialog } from './AlertDialog.svelte';
