@@ -1,11 +1,12 @@
 {
   "name": "svelte-onsenui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Svelte component bindings for Onsen UI",
 	"author": "David Mortell <dmortell@yahoo.com>",
 	"license": "MIT",
   "homepage": "https://github.com/dmortell/svelte-onsenui",
 	"type": "module",
+	"files": ["/examples/dist/"],
   "bugs": {
     "url": "https://github.com/dmortell/svelte-onsenui/issues"
   },
@@ -32,9 +33,10 @@
 	},
   "scripts": {
     "dev": "echo Please change to the examples directory to run the dev server",
-    "dev2":  "cd examples && vite --port 3100",
-    "build": "cd examples && vite build",
-    "serve": "cd examples && vite preview",
+    "dev2":   "cd examples && vite --port 3100",
+    "prepare":"cd examples && vite build",
+    "build":  "cd examples && vite build",
+    "serve":  "cd examples && vite preview",
     "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js",
     "test": "jest"
   },

@@ -63,13 +63,9 @@ Import the Svelte components and OnsenUI library and css files.
 </Page>
 ```
 
-## Bugs
-
-The title attribute on ActionSheet causes a title to be displayed wherever the mouse is.
-
 # Contributing
 
-We welcome contributions by either opening an issue or doing a pull request.
+Contributions to the development of this package are welcome. If you would like to help with development, please open an issue or do a pull request.
 
 ```bash
 mkdir svelte-onsenui
@@ -78,7 +74,7 @@ git clone https://github.com/dmortell/svelte-onsenui.git
 npm install
 ```
 
-View the demo examples with the following commands and open a brower at http://localhost:3100/.
+Test your changes and view the demo examples by running the following commands and opening a browser at http://localhost:3100/.
 ```
 cd examples
 npm run dev

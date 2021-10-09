@@ -26,7 +26,6 @@
   />
  */
 
-
   /**
    * @name modifier
    * @type string
@@ -36,7 +35,7 @@
    *  [/en]
    *  [ja][/ja]
    */
-	 export var modifier = ''		// PropTypes.string,
+	//  export var modifier = ''		// PropTypes.string,
 
 /**
  * @name dataSource
@@ -88,7 +87,7 @@
 
 </script>
 
-<ons-list {modifier} {...$$restProps} use:events>
+<ons-list {...$$restProps} use:events>
 	<slot name='header' />
 	<slot/>
 	<slot name='footer' />

@@ -1,6 +1,6 @@
 <script>
 import {Toolbar, BackButton} from '$svelte-onsenui';
-export let modifier, title
+export let modifier='', title
 </script>
 
 <Toolbar modifier={modifier} >

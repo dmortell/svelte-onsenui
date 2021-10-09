@@ -32,25 +32,29 @@
 	<div style="display:flex; flex-direction:column; align-items:center; justify-content: center;">
 		<p> </p>
 		<Button {modifier} on:click={changeModifier} > {btnText} </Button>
-		<p> modifier: {modifier} </p>
-		<p> Button standard </p>
+		<p>Modifier: {modifier} </p>
+		<p>Button standard </p>
 		<Icon {modifier} fixed-width='false' spin icon='shield, material:md-edit' size='20px, material:20px' />
 
 		<h3>Rotate</h3>
-		{#each angles as val}
-		<Icon {modifier} fixed-width rotate={val}
+		<div style='display:flex; justify-content: space-around; flex-wrap: nowrap; line-height:44px;'>
+			{#each angles as val}
+			<Icon {modifier} fixed-width rotate={val}
 			size={{ 'default': 20, material: 18 }}
 			icon={{ 'default': 'shield', material: 'md-edit' }}/>
-		{/each}
+			{/each}
+		</div>
 
     <h3>Spin</h3>
     <Icon size="30" spin icon="md-spinner">nsen</Icon>
 
 		<h3>Material icons</h3>
 
-    <Icon icon="md-face"></Icon>
-    <Icon icon="md-home"></Icon>
-    <Icon icon="md-zoom-in"></Icon>
+		<div style='display:flex; justify-content: space-around; flex-wrap: nowrap;'>
+			<Icon icon="md-face"></Icon>
+			<Icon icon="md-home"></Icon>
+			<Icon icon="md-zoom-in"></Icon>
+		</div>
 
     <h3>Font awesome</h3>
 

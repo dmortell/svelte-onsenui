@@ -8,6 +8,7 @@ export { default as Button } from './Button.svelte';
 export { default as Card } from './Card.svelte';
 export { default as Fab } from './Fab.svelte';
 export { default as Icon } from './Icon.svelte';
+export { default as LazyList } from './LazyList.svelte';
 export { default as List } from './List.svelte';
 export { default as ListItem } from './ListItem.svelte';
 export { default as ListHeader } from './ListHeader.svelte';
@@ -25,7 +26,6 @@ export { default as Checkbox } from './Checkbox.svelte';
 export { default as Radio } from './Radio.svelte';
 export { default as SearchInput } from './SearchInput.svelte';
 
-// export { default as LazyList } from './LazyList.svelte';
 // export { default as Tabbar } from './Tabbar.svelte';
 // export { default as AlertDialog } from './AlertDialog.svelte';
 // export { default as Toast } from './Toast.svelte';
