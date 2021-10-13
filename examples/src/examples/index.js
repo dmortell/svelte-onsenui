@@ -2,6 +2,7 @@
 export { default as ActionSheets } from './ActionSheets.svelte';
 export { default as AlertDialogs } from './AlertDialogs.svelte';
 export { default as Card } from './Card.svelte';
+export { default as Dialogs } from './Dialogs.svelte';
 export { default as Icons } from './Icons.svelte';
 export { default as Inputs } from './Inputs.svelte';
 export { default as LazyLists } from './LazyLists.svelte';
@@ -17,7 +18,6 @@ export { default as Toolbars } from './Toolbars.svelte';
 // export { default as PullHook } from './PullHook.svelte';
 // export { default as Carousel } from './Carousel.svelte';
 // export { default as Popover } from './Popover.svelte';
-// export { default as Dialog } from './Dialog.svelte';
 // export { default as Modal } from './Modal.svelte';
 // export { default as Switch } from './Switch.svelte';
 // export { default as ProgressBar } from './ProgressBar.svelte';

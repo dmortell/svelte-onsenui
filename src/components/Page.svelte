@@ -204,6 +204,8 @@ export var contentStyle = {};		// PropTypes.object,
 // const modal = this.props.renderModal(this);
 // const fixed = this.props.renderFixed(this);
 
+// todo handle ons-page events: inint destroy show hide https://onsen.io/v2/guide/lifecycle.html#events
+
 </script>
 
 <ons-page {...$$restProps} use:events>

@@ -32,8 +32,8 @@
 		"jest": "^27.2.4"
 	},
   "scripts": {
-    "dev": "echo Please change to the examples directory to run the dev server",
-    "dev2":   "cd examples && vite --port 3100",
+    "dev2": "echo Please change to the examples directory to run the dev server",
+    "dev":   "cd examples && vite --port 3100",
     "prepare":"cd examples && vite build",
     "build":  "cd examples && vite build",
     "serve":  "cd examples && vite preview",

@@ -20,9 +20,22 @@
 <Page style={{background: 'green'}}>
 	<Toolbar slot=toolbar><div class='center'>Svelte OnsenUI Examples</div></Toolbar>
 	<List modifier='inset'>
-		<ListItem slot='header' lockOnDrag style='background: #cddfe4' tappable tap-background-color='lightblue'> HEADER </ListItem>
+		<ListItem slot='header' lockOnDrag style='background: #cddfe4' tappable tap-background-color='lightblue'> Examples </ListItem>
 		{#each examples as example}
 			<ListItem on:click={()=>goto(example)}>{example.title}</ListItem>
 		{/each}
 	</List>
 </Page>
+
+<style>
+/* :global(body) {
+	--f7-page-master-width: 33%;
+	--f7-button-text-transform: none;
+} */
+:global(.page__content) {
+	background-color: #f6f6f6;
+}
+:global(.dialog) {
+	height: 300px !important;
+}
+</style>

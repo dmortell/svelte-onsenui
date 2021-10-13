@@ -30,16 +30,28 @@ import {getEventsAction} from './Utils.js';
 const events = getEventsAction();
 let navi
 
-export let navigator = {
-	pushPage: (page) => {
-		console.log('pushed', page.props)
-		routes.push(page)
-		routes = routes
-		// navi.pushPage('page2.htm')
-	}
+// export
+let navigator = {
+	// pushPage: (page) => {
+	// 	console.log('pushed', page.props)
+	// 	routes.push(page)
+	// 	routes = routes
+	// 	// navi.pushPage('page2.htm')
+	// }
 }
 
 export let initialRoute, initialRouteStack
+
+function pushPage(page){
+	console.log('pushed', page.props)
+	routes.push(page)
+	routes = routes
+	// navi.pushPage('page2.htm')
+}
+function popPage(){
+		routes.pop();
+		routes = routes
+}
 
 let pages = [];
 let routes = [];
@@ -48,7 +60,10 @@ let state = {}
 
 	onMount(() => {
 		next_id++;
+		// navigator = {}
 		navigator.navi = navi
+		navigator.pushPage = pushPage
+		navigator.popPage = popPage
     // const node = this._navi;
     // node.popPage = this.popPage.bind(this);
 
@@ -72,6 +87,22 @@ let state = {}
       routes = [];
     }
 
+		setTimeout(e=>{
+			navi.pushPage(getKey(0))
+			console.log('loaded navigator with pages', routes, navi)
+		},10)
+
+// document.addEventListener('init', function(event) {
+//   var page = event.target;
+//   if (page.id === 'page1') {
+//     page.querySelector('#push-button').onclick = function() {
+//       document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
+//     };
+//   } else if (page.id === 'page2') {
+//     page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+//   }
+// });
+
     // pages = routes.map(
     //   (route) => this.props.renderPage(route, this)
     // );
@@ -86,8 +117,11 @@ let state = {}
 		}
 	})
 
-	$: console.log(navi?._isRunning)
+	$: console.log('navi.isrunning',navi?._isRunning)
 
+function getKey(idx){
+	return 'page-'+next_id+'-'+idx
+}
 
 </script>
 
@@ -97,8 +131,11 @@ let state = {}
 	{/each}
 </ons-navigator>
 
-<!-- {#each pages as page, id}
-	<template id={'nav_'+next_id+'_'+id}>
-		<svelte:component this={page.component} {...page.props}/>
-	</template>
+<!-- {#each routes as page, id}
+<template id={getKey(id)}>
+	<svelte:component this={page.component} {navigator} {...page.props}/>
+</template>
 {/each} -->
+
+<!-- <slot {navigator}>
+</slot> -->
