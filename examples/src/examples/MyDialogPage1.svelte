@@ -1,11 +1,11 @@
 <script>
 import {Page, Toolbar, Input, Button} from '$svelte-onsenui';
 import MyDialogPage2 from './MyDialogPage2.svelte';
-export let name, description, onNameChanged, onDescriptionChanged, navigator
+export let name, description, onNameChanged, onDescriptionChanged, onCancel, navigator
 
   function nextPage() {
 		console.log('mydialog.nextpage',navigator)
-    navigator.pushPage({component: MyDialogPage2, props: {description, onChange: onDescriptionChanged}});
+    navigator.pushPage({component: MyDialogPage2, props: {description, onChange: onDescriptionChanged, onCancel}});
   }
 
 
@@ -22,7 +22,7 @@ export let name, description, onNameChanged, onDescriptionChanged, navigator
 			<Input id=name value={name} on:change={onNameChanged} />
 		<p>
 			<Button modifier='light' on:click={nextPage}>Next</Button>
-			<!-- <Button modifier='light' on:click={nextPage}>Close</Button> -->
+			<Button modifier='light' on:click={onCancel}>Close</Button>
 		</p>
 	</div>
 </Page>

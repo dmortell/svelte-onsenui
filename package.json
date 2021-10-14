@@ -1,6 +1,6 @@
 {
   "name": "svelte-onsenui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Svelte component bindings for Onsen UI",
 	"author": "David Mortell <dmortell@yahoo.com>",
 	"license": "MIT",

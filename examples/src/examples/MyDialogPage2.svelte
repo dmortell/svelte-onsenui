@@ -1,6 +1,6 @@
 <script>
 import {Page, Toolbar, Input, Button} from '$svelte-onsenui';
-export let description, onChange, navigator
+export let description, onChange, onCancel, navigator
 </script>
 
 <Page>
@@ -12,6 +12,7 @@ export let description, onChange, navigator
 		<Input value={description} on:change={onChange} />
 		<p>
 			<Button modifier='light' on:click={navigator.popPage}>Previous</Button>
+			<Button modifier='light' on:click={onCancel}>Close</Button>
 		</p>
 	</div>
 </Page>

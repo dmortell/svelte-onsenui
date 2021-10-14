@@ -2,6 +2,7 @@
 	import { Page, Toolbar, List, ListItem } from '$svelte-onsenui';
 	import * as components from './examples/';
 	export let navigator
+
 	const examples = getExamples()
 
 	function goto(example) {

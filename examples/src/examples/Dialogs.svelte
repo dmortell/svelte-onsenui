@@ -1,10 +1,11 @@
 <script>
-import {Page, Button} from '$svelte-onsenui';
-import MyToolbar from './MyToolbar.svelte';
-import MyDialog from './MyDialog.svelte';
-import ons from 'onsenui';
+	import {Page, Button} from '$svelte-onsenui';
+	import MyToolbar from './MyToolbar.svelte';
+	import MyDialog from './MyDialog.svelte';
+	import ons from 'onsenui';
 
 	let state = { dialogOpen: false, name: 'bob', description: 'the builder' };
+
   function hide() { state = {...state, dialogOpen: false}; }
   function onNameChanged(value) { state = {...state, name: value}; }
   function onDescriptionChanged(value) { state = {...state, description: value}; }
@@ -28,5 +29,6 @@ import ons from 'onsenui';
 	<MyDialog onCancel={hide} name={state.name} description={state.description}
 		onNameChanged={onNameChanged}
 		onDescriptionChanged={onDescriptionChanged}
-		isOpen={state.dialogOpen} />
+		isOpen={state.dialogOpen}
+	/>
 </Page>

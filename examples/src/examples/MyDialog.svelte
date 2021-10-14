@@ -23,16 +23,17 @@ export let onCancel, onNameChanged, onDescriptionChanged, isOpen
   //   return React.createElement(comp, props);
   // }
 
+// props: {name, pushPage, popPage, onNameChanged, onDescriptionChanged}
+// <!-- <MyDialogPage1 {name} {onNameChanged} {onDescriptionChanged} {pushPage}/> -->
+// <!-- <Navigator animation='slide' bind:this={navigator} -->
+
 </script>
 
 <Dialog onCancel={onCancel} visible={isOpen} animation='default' isCancelable={true}>
-	<!-- <MyDialogPage1 {name} {onNameChanged} {onDescriptionChanged} {pushPage}/> -->
-	<!-- <Navigator animation='slide' bind:this={navigator} -->
 	<Navigator animation='slide'
 		initialRoute={{
 			component: MyDialogPage1,
-			props: {name, description, onNameChanged, onDescriptionChanged}
-			// props: {name, pushPage, popPage, onNameChanged, onDescriptionChanged}
+			props: {name, description, onNameChanged, onDescriptionChanged, onCancel}
 		}}
 	/>
 </Dialog>
