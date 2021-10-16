@@ -3,27 +3,6 @@
 	import {getEventsAction} from './Utils.js';
 	const events = getEventsAction();
 
-	// export let visible = true
-	export let isOpen = false
-	export let node
-
-	$: {
-		setOpen(isOpen)
-	}
-
-	onMount(() => {
-		setOpen(isOpen);
-		return () => {}
-	})
-
-	function setOpen(wantOpen){
-		if (node){
-			if (isOpen && !wantOpen) node.close();
-			else if (!isOpen && wantOpen) node.open();
-			isOpen = wantOpen;
-		}
-	}
-
 /**
  * @original ons-splitter-side
  * @category menu
@@ -93,7 +72,7 @@
 	 * Otherwise the sidebar will always stay open
 	 *
 	 * mode='collapse' and collapse='landscape': the menu is collapsed but can be swiped
-	 * 
+	 *
    * @name swipeable
    *  [en]Ennable swipe interaction on collapse mode.[/en]
    * @name isOpen
@@ -123,10 +102,43 @@
    * @name onModeChange
    *  [en] Called after the component's mode changes. [/en]
    */
+
+
+
+
+// 	export var expanded = false; 	// PropTypes.bool
+// 	export var left = null;
+// 	import {onMount} from 'svelte'
+
+// 	let node
+// //  $: hasLeft = (typeof left !== undefined || typeof left !== null) || $$slots.left
+// 	$: hasLeft = (left !== undefined && left !== null) || $$slots.left
+// 	$: doExpand(expanded)
+
+// 	function doExpand(expanded){
+// 	if (node && expanded !== node.expanded){
+// 		console.log('expand',expanded,node);
+// 		expanded ? node.showExpansion() : node.hideExpansion()
+// 	}
+// 	}
+
+
+
+	export let isOpen = false
+	export let node
+
+	$: setOpen(isOpen)
+
+	function setOpen(wantOpen){
+		if (node){
+			if (node.isOpen && !wantOpen) node?.close();
+			else if (!node.isOpen && wantOpen) node?.open();
+		}
+	}
+
 </script>
 
-<!-- {#if visible}
-{/if} -->
+
 <ons-splitter-side {...$$restProps} bind:this={node} use:events>
 	<slot/>
 </ons-splitter-side>

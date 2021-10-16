@@ -29,10 +29,15 @@ import { tick } from 'svelte';
 		showLeft = !showLeft
 		if (showLeft) nodeLeft.open()
 		else nodeLeft.close()
-		console.log('toggle  to', {showLeft}, nodeLeft)
+		console.log('toggle to', {showLeft}, nodeLeft)
 	}
 
 	$: console.log({isOpenLeft})
+
+	// $: {
+	// 	if (openRight) nodeRight.open()
+	// 	else nodeRight.close()
+	// }
 
 	let nodeLeft, nodeRight
 </script>
@@ -52,7 +57,7 @@ import { tick } from 'svelte';
 				<ons-list>
 					<!-- <ons-list-item onclick="fn.load('home.html')" tappable> -->
 					<ons-list-item  tappable>
-						Home22131111
+						Home
 					</ons-list-item>
 					<ons-list-item  tappable>
 						Settings
@@ -88,7 +93,7 @@ import { tick } from 'svelte';
 				bind:node={nodeLeft}
 			>
 			<Page>
-				<Toolbar><div class="center">lpafrsss menu</div></Toolbar>
+				<Toolbar><div class="center">Menu</div></Toolbar>
 				<div style="margin-top:50px;"><Button on:click={() => toggleLeft()}>Close left menu</Button></div>
 			</Page>
 		</SplitterSide>
@@ -96,27 +101,26 @@ import { tick } from 'svelte';
 		<SplitterContent>
 			<Page>
 				<p><Button on:click={() => swipeable = !swipeable} >{swipeable ? 'Disable Swipe' : 'Enable Swipeable'}</Button></p>
-				<p><Button on:click={toggleLeft}>toggle left menu</Button></p>
+				<p><Button on:click={() => showLeft = !showLeft}>toggle left menu</Button></p>
 				<p><Button on:click={() => showRight = toggle(showRight)} > toggle right menu</Button> </p>
 				<p><Button on:click={() => openLeft = true}>Open left menu</Button></p>
 				<p><Button on:click={() => openRight = true}>Open right menu</Button></p>
-				Try it....1111
+				Try it....
 			</Page>
 		</SplitterContent>
 
-
-
 		<!-- <SplitterSide side="right" width="300px" collapse={!showRight} isOpen={openRight} -->
 
-		<SplitterSide side="right" width="300px"  isOpen={openRight}
+		<SplitterSide side="right" width="300px" isOpen={openRight}
 			mode='collapse'
 			collapse='landscape'
+			bind:node={nodeRight}
 			onClose={handleRightClose} onOpen={handleRightOpen} {swipeable}>
 			<Page>
 				<Toolbar>
 					<div class="center">right menu</div>
 				</Toolbar>
-				<p style="margin-top:50px;"><Button on:click={() => openRight = toggle(openRight)}>Close right menu</Button></p>
+				<p style="margin-top:50px;"><Button on:click={() => openRight = false}>Close right menu</Button></p>
 			</Page>
 		</SplitterSide>
 

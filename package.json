@@ -1,6 +1,6 @@
 {
   "name": "svelte-onsenui",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Svelte component bindings for Onsen UI",
 	"author": "David Mortell <dmortell@yahoo.com>",
 	"license": "MIT",
@@ -18,7 +18,7 @@
 	],
 	"todo": {
 		"version": "npm version patch",
-		"publish": "npm publish --access public --tag latest",
+
 
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
@@ -38,6 +38,7 @@
     "build":  "cd examples && vite build",
     "serve":  "cd examples && vite preview",
     "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js",
+		"publish": "npm publish --access public --tag latest",
     "test": "jest"
   },
   "devDependencies": {

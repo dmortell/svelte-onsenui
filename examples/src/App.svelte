@@ -43,6 +43,10 @@
 <Navigator swipeable bind:navigator initialRoute={{component:Examples, props:{}}}>
 </Navigator>
 
+<!-- <Navigator swipeable let:navigator>
+	<Examples/>
+</Navigator> -->
+
 <!-- <Navigator
 	swipeable={true}
 	renderPage={this.renderPage}

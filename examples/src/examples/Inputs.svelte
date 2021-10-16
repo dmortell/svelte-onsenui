@@ -57,19 +57,8 @@ function editSelects(event) {
     document.getElementById('choose-sel').setAttribute('modifier', event.target.value);
   }
 }
-// function addOption(event) {
-//   const option = document.createElement('option');
-//   var text = document.getElementById('optionLabel').value;
-//   option.innerText = text;
-//   text = '';
-//   document.getElementById('dynamic-sel').appendChild(option);
-// }
 
 // todo fix Switch inputId to work with Label
-
-// export { default as Switch } from './Switch.svelte';
-// export { default as Range } from './Range.svelte';
-// export { default as Select } from './Select.svelte';
 
 </script>
 
