@@ -33,9 +33,10 @@
 		<!-- <ListHeader style={{fontSize: 15}} className="testClass"> Header Text </ListHeader> -->
 		<ListHeader slot='header' style="font-size: 15px">Inset List</ListHeader>
 		{#each data as row, idx}
-			<ListItem modifier={idx === data.length - 1 ? 'longdivider' : null}>
-				Item {row}...
-				<div class='right'>
+			<ListItem left={idx+1} modifier={idx === data.length - 1 ? 'longdivider' : null}>
+				Item {row}
+				<div slot='left'>{idx+1}</div>
+				<div slot='right'>
 					<Button modifier="quiet" on:click={() => remove(idx)}>Remove <Icon icon='trash'/></Button>
 				</div>
 			</ListItem>

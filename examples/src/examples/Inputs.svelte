@@ -1,12 +1,14 @@
 <script>
 	import { Page, Toolbar, ToolbarButton, BackButton, Button, Input, List, ListItem, Checkbox, Radio, SearchInput } from '$svelte-onsenui';
+	import { Switch, Range, Select, ListHeader, Row, Col, Icon } from '$svelte-onsenui';
 	import MyToolbar from './MyToolbar.svelte';
 
 	let state = {
       text: '',
 			search: '',
       selected: [],
-      selected2: 1
+      selected2: 1,
+			ranges: [25,50,75],
   };
 	let fruits = ["apple", "grape", "orange"];
 	let selectedFruit = "";
@@ -40,6 +42,35 @@
 		const field = event.target.name || 'text';					// if name is not specified, update state.text
 		state = {...state, [field]: event.target.value};
 	}
+
+	function onRangeChange(event, slider){
+		console.log(event)
+		let ranges = state.ranges
+		ranges[slider] = event.target.value
+		state = {...state, ranges};
+	}
+
+
+function editSelects(event) {
+  document.getElementById('choose-sel').removeAttribute('modifier');
+  if (event.target.value == 'material' || event.target.value == 'underbar') {
+    document.getElementById('choose-sel').setAttribute('modifier', event.target.value);
+  }
+}
+// function addOption(event) {
+//   const option = document.createElement('option');
+//   var text = document.getElementById('optionLabel').value;
+//   option.innerText = text;
+//   text = '';
+//   document.getElementById('dynamic-sel').appendChild(option);
+// }
+
+// todo fix Switch inputId to work with Label
+
+// export { default as Switch } from './Switch.svelte';
+// export { default as Range } from './Range.svelte';
+// export { default as Select } from './Select.svelte';
+
 </script>
 
 <Page>
@@ -68,6 +99,15 @@
 			<div> Text: {state.text} </div>
 			<div> Find: {state.search} </div>
 			<Button on:click={changeInputs}>Change reord</Button>
+
+
+		<h2>Selects</h2>
+			<p>Choose a type of select with different modifiers:</p>
+			<ons-select id="choose-sel" on:change={editSelects}>
+				<option value="basic">Basic</option>
+				<option value="material">Material</option>
+				<option value="underbar">Underbar</option>
+			</ons-select>
 
 		<h2>Checkboxes</h2>
 			{#each [0,1,2] as idx}
@@ -100,6 +140,52 @@
 				</ListItem>
 			{/each}
 			<p>Selected: {state.selected2}</p>
+
+		<h2>Switches</h2>
+			<List>
+				<ListHeader>Settings</ListHeader>
+				<ListItem tappable>
+					<label for='switch1'>Enable cool feature</label>
+					<Switch slot=right inputId=switch1 checked />
+				</ListItem>
+			</List>
+
+		<h2>Ranges</h2>
+			<Row>
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="volume-down"></Icon>
+				</Col>
+				<Col>
+					<Range style="width: 100%;" value={state.ranges[0]} on:change={e=>onRangeChange(e,0)}></Range>
+				</Col>
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="md-volume-up"></Icon>
+				</Col>
+			</Row>
+			<Row style="margin-top: 20px;">
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="md-brightness-low"></Icon>
+				</Col>
+				<Col>
+					<Range style="width: 100%;" value={state.ranges[1]} on:change={e=>onRangeChange(e,1)}></Range>
+				</Col>
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="md-brightness-high"></Icon>
+				</Col>
+			</Row>
+			<Row style="margin-top: 20px;">
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="md-thumb-down"></Icon>
+				</Col>
+				<Col>
+					<Range style="width: 100%;" value={state.ranges[2]} on:change={e=>onRangeChange(e,2)}></Range>
+				</Col>
+				<Col width="40px" style="text-align: center; line-height: 31px;">
+					<Icon icon="md-thumb-up"></Icon>
+				</Col>
+			</Row>
+
+			<p>Ranges: [{state.ranges.join(', ')}]</p>
 
 	</div>
 

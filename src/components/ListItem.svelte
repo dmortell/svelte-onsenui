@@ -79,38 +79,40 @@ const events = getEventsAction();
    *  [ja][/ja]
    */
 	 export var expanded = false; 	// PropTypes.bool
+	 export var left = null;
 	 import {onMount} from 'svelte'
 
 	 let node
+	//  $: hasLeft = (typeof left !== undefined || typeof left !== null) || $$slots.left
+	 $: hasLeft = (left !== undefined && left !== null) || $$slots.left
 	 $: doExpand(expanded)
 
-	 onMount(()=>{ doExpand(expanded) })
-
 	 function doExpand(expanded){
-		if (node && expanded !== node.expanded) expanded ? node.showExpansion() : node.hideExpansion()
+		if (node && expanded !== node.expanded){
+			console.log('expand',expanded,node);
+			expanded ? node.showExpansion() : node.hideExpansion()
+		}
 	 }
 	 // todo add more slots in listItem
 
-	 // todo fix error in onsen animator: listItem.expandableContent is null
-		//  _animateExpansion(listItem, shouldOpen, callback) {
-  //   // To animate the opening of the expansion panel correctly, we need to know its
-  //   // height. To calculate this, we set its height to auto, and then get the computed
-  //   // height and padding. Once this is done, we set the height back to its original value.
-  //   const oldHeight = listItem.expandableContent.style.height;
-  //   const oldDisplay = listItem.expandableContent.style.display;
-  //   listItem.expandableContent.style.height = 'auto';
-  //   listItem.expandableContent.style.display = 'block';
-  //   const computedStyle = window.getComputedStyle(listItem.expandableContent);
 
 </script>
 
 <ons-list-item bind:this={node} class:expanded {expanded} {...$$restProps} use:events>
+	{#if hasLeft}
+		<div class="left"><slot name="left">{left}</slot></div>
+	{/if}
 	<slot/>
+	{#if $$slots.right}
+		<div class="right"><slot name="right"></slot></div>
+	{/if}
 </ons-list-item>
 
 <!-- <ons-list-item {expanded} {expandable} {lockOnDrag} {tappable} {tapBackgroundColor} {modifier} {...$$restProps}>
 	<slot/>
 </ons-list-item> -->
+
+<!-- svelte:fragment -->
 
 <!-- {#if $$slots.left}
 	<div class="nav-left">
