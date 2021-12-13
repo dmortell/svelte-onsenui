@@ -2,7 +2,7 @@
 
 # Svelte Components for Onsen UI
 
-[Onsen UI](https://onsen.io/2/) is a UI component library for hybrid mobile apps. It provides components for navigation, forms, tabs, Material Design, infinite lists and much more.
+[Onsen UI](https://onsen.io/) is a UI component library for hybrid mobile apps. It provides components for navigation, forms, tabs, Material Design, infinite lists and much more.
 
 It can be used to build hybrid apps with [Cordova](https://cordova.apache.org/) and [PhoneGap](http://phonegap.com/) but can also run in the browser.
 
