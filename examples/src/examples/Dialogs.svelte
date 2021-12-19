@@ -5,6 +5,7 @@
 	import ons from 'onsenui';
 
 	let state = { dialogOpen: false, name: 'bob', description: 'the builder' };
+	let showModal = false
 
   function hide() { state = {...state, dialogOpen: false}; }
   function onNameChanged(value) { state = {...state, name: value}; }
@@ -19,12 +20,12 @@
 
 <!-- <Modal isOpen={state.showModal} animation='fade' onPostShow={() => console.log('modal shown')} onPostHide={() => console.log('modal hidden')} > -->
 
-<Modal isOpen={state.showModal} animation='fade'>
+<Modal bind:isOpen={showModal} animation='fade'>
 	<Page style="background-color:blue;">
 		<Toolbar>
 			<div class="center">This is a modal page</div>
-			<div class="left">
-			<ToolbarButton on:click={() => state.showModal = false}>
+			<div class="right">
+			<ToolbarButton on:click={() => showModal = false}>
 				<Icon icon='close' size='24px, material:20px' />
 			</ToolbarButton>
 			</div>
@@ -42,21 +43,21 @@
 	<MyToolbar title='Dialog' slot='toolbar'/>
 	<div style='text-align: center'>
 		<h1>Page Content</h1>
-		<Button on:click={showAlert}> Show Dialog </Button>
+		<Button on:click={showAlert} modifier='outline'> Show Dialog </Button>
 		<Button on:click={showAlert2}> Onsen Alert </Button>
 		<Card>
 			<div>Name : {state.name} </div>
 			<div>Description: {state.description} </div>
 		</Card>
 
-
 		<Button on:click={() => {
-			state.showModal = true
-			console.log('clicked open modal',state)
+			showModal = true
+			console.log('clicked open modal',showModal)
 		}}>
-			Open Modal
+			Open Modal Page
 		</Button>
 		<section style="padding:15px;">
+			Section one
 		</section>
 
 	</div>

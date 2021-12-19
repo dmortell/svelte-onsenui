@@ -1,9 +1,12 @@
 <script>
 	import { Page, Toolbar, List, ListItem } from '$svelte-onsenui';
 	import * as components from './examples/';
+	import Forms from './examples/Forms.svelte';
 	export let navigator
 
 	const examples = getExamples()
+
+	let test = 1
 
 	function goto(example) {
 		console.log('clicked', example.title)
@@ -18,6 +21,10 @@
   }
 </script>
 
+{#if test}
+	<Forms/>
+{:else}
+
 <Page style={{background: 'green'}}>
 	<Toolbar slot=toolbar><div class='center'>Svelte OnsenUI Examples</div></Toolbar>
 	<List modifier='inset'>
@@ -27,6 +34,8 @@
 		{/each}
 	</List>
 </Page>
+
+{/if}
 
 <style>
 /* :global(body) {

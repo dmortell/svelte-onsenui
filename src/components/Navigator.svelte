@@ -134,12 +134,15 @@
 	function getKey(idx){
 		return 'page-'+next_id+'-'+idx
 	}
+
+	// var options = { animation: 'slide', onTransitionEnd: () => {} };
+	// controller.pushPage("page2.html", options);
 </script>
 
-<ons-navigator {...$$restProps} bind:this={_navi} use:events
+<ons-navigator var=controller {...$$restProps} bind:this={_navi} use:events
 	on:prepush|self={_prePush}
-	on:postpush|self={_postPush}
 	on:prepop|self={_prePop}
+	on:postpush|self={_postPush}
 	on:postpop|self={_postPop}
 >
 	{#each routes as page, id}

@@ -1,12 +1,13 @@
 node_modules
 /examples/node_modules/
 /examples/dist/
+/src/unused/
 /dist/
 /.vscode/
+bindings/svelte/public/
 .DS_Store
 *.code-workspace
-/src/unused/
-bindings/svelte/public/
+pnpm-lock.yaml
 
 # Icons
 public/css/font_awesome

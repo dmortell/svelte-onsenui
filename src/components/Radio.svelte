@@ -21,8 +21,8 @@
  */
 
 	export let checked;
-	export let id;
-	export let defaultValue, defaultCheck;
+	export let id = undefined
+	export let defaultValue = undefined, defaultCheck = undefined;
 	// $: if (defaultValue !== undefined && checked===undefined) checked = defaultValue
 	// $: if (defaultCheck !== undefined && checked===undefined) checked = defaultCheck
 	$: checked = checked ?? defaultCheck ?? defaultValue

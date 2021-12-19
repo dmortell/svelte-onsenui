@@ -24,7 +24,7 @@
 </script>
 
 <Page>
-	<MyToolbar title='List' />
+	<MyToolbar title='List' slot=toolbar/>
 
 	<!-- <List dataSource={this.state.data}></List> -->
 	<ListTitle>List Title</ListTitle>
@@ -45,12 +45,17 @@
 			<Button modifier="quiet" on:click={reverseData}>Reverse</Button>
 			<Button modifier="quiet" on:click={add}>Add more</Button>
 		</ListItem>
+		<ListItem link >
+			<p>Total: {data.join(' + ')} = {sum}</p>
+		</ListItem>
 	</List>
 
-	<p>{data.join(' + ')} = {sum}</p>
 
 	<ListTitle>Expandable List Items</ListTitle>
 	<List>
+		<ListItem link modifier='chevron'>
+			List item with chevron
+		</ListItem>
 		<ListItem expandable expanded>
 			Tap to expand
 			<div class="expandable-content">I have been expanded!</div>

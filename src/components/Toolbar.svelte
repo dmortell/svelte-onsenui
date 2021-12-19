@@ -54,6 +54,8 @@ export let visible = true
 //   visible: PropTypes.bool
 // };
 
+// <ons-bottom-toolbar inline>
+
 
 </script>
 
